@@ -1,0 +1,183 @@
+/* ====== RESET GENERAL ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f9;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ====== NAVBAR ====== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0077cc;
+  padding: 15px 30px;
+  color: white;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar .nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar .nav-links li a:hover {
+  color: #ffdd57;
+}
+
+/* ====== LAYOUT PRINCIPAL ====== */
+.layout {
+  display: grid;
+  grid-template-columns: 150px 1fr 150px; /* Izq - Centro - Der */
+  gap: 20px;
+  flex-grow: 1;
+  padding: 20px;
+}
+
+/* ====== COLUMNAS LATERALES ====== */
+.side {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.side img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* ====== CONTENIDO PRINCIPAL ====== */
+.container {
+  text-align: center;
+}
+
+.container h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #0077cc;
+}
+
+/* ====== CARTÓN DE BINGO ====== */
+#bingo-card {
+  display: grid;
+  grid-template-columns: repeat(5, 60px);
+  gap: 10px;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+#bingo-card div {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border: 2px solid #0077cc;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+#bingo-card div.marked {
+  background: #0077cc;
+  color: white;
+}
+
+/* ====== BOTONES ====== */
+.controls {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.controls button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background: #0077cc;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.controls button:hover {
+  background: #005fa3;
+}
+
+/* ====== NÚMEROS CANTADOS ====== */
+#called-numbers {
+  margin-top: 25px;
+  padding: 15px;
+  border: 2px dashed #0077cc;
+  border-radius: 10px;
+  background: #eaf6ff;
+}
+
+#called-numbers h3 {
+  margin-bottom: 10px;
+  color: #005fa3;
+}
+
+#numbers {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* ====== FOOTER ====== */
+.footer {
+  background: #0077cc;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: auto;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr; /* Todo en una sola columna */
+  }
+
+  .side {
+    display: none; /* Ocultar banners en móvil */
+  }
+
+  #bingo-card {
+    grid-template-columns: repeat(5, 50px);
+  }
+
+  #bingo-card div {
+    width: 50px;
+    height: 50px;
+    font-size: 1rem;
+  }
+}

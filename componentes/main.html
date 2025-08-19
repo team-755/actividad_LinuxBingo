@@ -1,0 +1,16 @@
+<section class="container">
+  <h1>Juego de Bingo</h1>
+  <div id="bingo-card"></div>
+  <div class="controls">
+    <button onclick="generateCard()">Generar Cartón</button>
+    <button onclick="callNumber()">Sacar Número</button>
+    <button onclick="resetGame()">Reiniciar</button>
+    <label>
+      <input type="checkbox" id="autoCall" onchange="toggleAutoCall()"> Auto
+    </label>
+  </div>
+  <div id="called-numbers">
+    <h3>Números Cantados:</h3>
+    <p id="numbers"></p>
+  </div>
+</section>

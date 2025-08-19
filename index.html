@@ -2,25 +2,37 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bingo</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>🎉 Bingo 🎉</h1>
-    <div id="bingo-card"></div>
-    <div class="controls">
-      <button onclick="generateCard()">Nueva tarjeta</button>
-      <button onclick="callNumber()">Cantar número</button>
-      <button onclick="resetGame()">Reiniciar juego</button>
-      <button onclick="clearMarks()">Quitar marcas</button>
-      <label><input type="checkbox" id="autoMark"> Auto-marcar</label>
-    </div>
-    <div id="called-numbers">
-      <h2>Números cantados:</h2>
-      <p id="numbers"></p>
-    </div>
-  </div>
-  <script src="script.js"></script>
+  <!-- NAV -->
+  <div id="navbar"></div>
+
+  <!-- LAYOUT PRINCIPAL -->
+  <main class="layout">
+    <div id="left-side"></div>
+    <div id="main-content"></div>
+    <div id="right-side"></div>
+  </main>
+
+  <!-- FOOTER -->
+  <div id="footer"></div>
+
+  <!-- Scripts -->
+  <script src="script/script.js"></script>
+  <script>
+    async function loadComponent(id, file) {
+      const res = await fetch(`componentes/${file}`);
+      document.getElementById(id).innerHTML = await res.text();
+    }
+
+    loadComponent("navbar", "nav.html");
+    loadComponent("left-side", "left.html");
+    loadComponent("main-content", "main.html");
+    loadComponent("right-side", "right.html");
+    loadComponent("footer", "footer.html");
+  </script>
 </body>
 </html>
